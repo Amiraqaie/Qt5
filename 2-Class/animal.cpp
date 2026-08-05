@@ -10,3 +10,8 @@ void Animal::speak(QString message)
 {
     qInfo() << message;
 }
+
+void Animal::speak()
+{
+    qInfo() << "random animal voice";
+}

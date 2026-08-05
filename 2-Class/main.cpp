@@ -1,6 +1,11 @@
 #include <QCoreApplication>
 #include "animal.h"
 #include "laptop.h"
+#include "mammal.h"
+#include "feline.h"
+#include "canine.h"
+#include "appliance.h"
+#include "lion.h"
 
 void test(Laptop& machine)
 {
@@ -27,6 +32,7 @@ void makeLaptops()
 int main(int argc, char *argv[])
 {
     // episode 2, 3
+    qInfo() << "Episode 2, 3 lessons : ";
     QCoreApplication a(argc, argv);
 
     QObject q;
@@ -38,10 +44,31 @@ int main(int argc, char *argv[])
     cat.speak("meow");
 
     // episode 4
+    qInfo() << "Episode 4 lessons : ";
     makeLaptops();
 
-    // episode 5 inheritance
+    // episode 5, 6 inheritance
+    qInfo() << "Episode 5, 6 lessons (inheritence) : ";
+    Animal animal;
+    Mammal mammal;
+    Canine canine;
+    canine.bark();
+    canine.hasBackBone();
+    Feline feline;
+    feline.meow();
+    feline.hasBackBone();
 
+    // episode 7 Interfaces : Define contrct between objects to avoid multiple inheritence
+    Appliance machine3000;
+    qInfo() << machine3000.cook();
+    qInfo() << machine3000.freeze();
+    qInfo() << machine3000.grill();
+
+    // episode 8 Overriding : We want to change behaviour of base class
+    Lion lion;
+    lion.speak(); // will not use speak of animal
+    lion.Feline::speak(); // will call the Feline class speak that is not directly in Feline so it uses animal speak
+    lion.Animal::speak(); // will call the animal class speak
 
     return QCoreApplication::exec();
 }

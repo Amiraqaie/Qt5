@@ -10,8 +10,12 @@ class Animal : public QObject
 public:
     explicit Animal(QObject *parent = nullptr);
     void speak(QString message);
+    void speak();
 
-    bool isAlive();
+    bool isAlive()
+    {
+        return true;
+    }
 signals:
 };
 

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(2-Class LANGUAGES CXX)
+project(3-Pointers LANGUAGES CXX)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -12,24 +12,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 
-add_executable(2-Class
+add_executable(3-Pointers
   main.cpp
-  animal.h animal.cpp
-  laptop.h laptop.cpp
-  mammal.h mammal.cpp
-  feline.h feline.cpp
-  canine.h canine.cpp
-  toaster.h
-  freezer.h
-  microwave.h
-  appliance.h appliance.cpp
-  lion.h lion.cpp
-
 )
-target_link_libraries(2-Class PRIVATE Qt${QT_VERSION_MAJOR}::Core)
+target_link_libraries(3-Pointers PRIVATE Qt${QT_VERSION_MAJOR}::Core)
 
 include(GNUInstallDirs)
-install(TARGETS 2-Class
+install(TARGETS 3-Pointers
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
