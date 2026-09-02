@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(6-Casting LANGUAGES CXX)
+project(7-ExeptionHandeling LANGUAGES CXX)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -12,16 +12,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 
-add_executable(6-Casting
+add_executable(7-ExeptionHandeling
   main.cpp
-  car.h car.cpp
-  racecar.h racecar.cpp
-  feline.h feline.cpp
 )
-target_link_libraries(6-Casting PRIVATE Qt${QT_VERSION_MAJOR}::Core)
+target_link_libraries(7-ExeptionHandeling PRIVATE Qt${QT_VERSION_MAJOR}::Core)
 
 include(GNUInstallDirs)
-install(TARGETS 6-Casting
+install(TARGETS 7-ExeptionHandeling
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )

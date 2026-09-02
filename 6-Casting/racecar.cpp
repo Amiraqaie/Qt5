@@ -1,0 +1,5 @@
+#include "racecar.h"
+
+RaceCar::RaceCar(QObject *parent)
+    : Car{parent}
+{}
