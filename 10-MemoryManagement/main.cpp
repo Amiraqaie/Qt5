@@ -26,7 +26,7 @@ void CreateParentChild()
     MyObject* parent = new MyObject("Parent");
     MyObject* child  = new MyObject("Child", parent);
 
-    qDebug() << "Memory Leanks ..."; // pointers will be removed not the actual object => so deconstructor will not be called
+    qDebug() << "Memory Leaks ..."; // pointers will be removed not the actual object => so deconstructor will not be called
 }
 
 MyObject* CreateParentChildPtr()
